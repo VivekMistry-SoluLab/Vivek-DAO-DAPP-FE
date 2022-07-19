@@ -2,12 +2,18 @@ import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { MESSAGE_REQUIRED, TITLE_REQUIRED } from "../constants/errorConstants";
+import { useAccount } from "wagmi";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export const Create = () => {
+  const { address, isConnected } = useAccount();
+  console.log(address, isConnected);
+
   const validationSchema = Yup.object({
     title: Yup.string().required(TITLE_REQUIRED),
     message: Yup.string().required(MESSAGE_REQUIRED),
   });
+
   return (
     <>
       <div
@@ -30,16 +36,7 @@ export const Create = () => {
             console.log(values);
           }}
         >
-          {({
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            // setFieldValue,
-            handleSubmit,
-            // isSubmitting,
-          }) => (
+          {({ values, errors, touched, handleChange, handleSubmit }) => (
             <form onSubmit={handleSubmit}>
               <label
                 htmlFor="title"
@@ -94,12 +91,21 @@ export const Create = () => {
                 className=" border mx-auto max-w-2xl border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-gray-600 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500 color:black"
                 placeholder="https://forum.balancer.fi/proposal"
               />
-              <button
-                type="submit"
-                className="mx-auto mt-5 block px-4 py-2 m-2 max-w-2xl rounded-full border shadow-md hover:bg-gray-100 text-white hover:text-black"
-              >
-                Create Proposal
-              </button>
+              {isConnected && (
+                <div className="mx-auto block max-w-2xl mt-5">
+                  <button
+                    type="submit"
+                    className="mt-5 px-4 py-2 rounded-lg border shadow-md hover:bg-gray-100 text-white hover:text-black"
+                  >
+                    Create Proposal
+                  </button>
+                </div>
+              )}
+              {!isConnected && (
+                <div className="block mt-10 mx-auto max-w-2xl text-sm font-normal">
+                  <ConnectButton />
+                </div>
+              )}
             </form>
           )}
         </Formik>
