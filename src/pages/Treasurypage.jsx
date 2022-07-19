@@ -1,14 +1,14 @@
-import React from 'react';
-import Treasury from '../components/Treasury';
-import { Navbar } from '../components/Navbar';
+import React from "react";
+import Treasury from "../components/Treasury";
+import { Navbar } from "../components/Navbar";
 
 const Treasurypage = () => {
   return (
     <div>
-        <Navbar/>
-        <Treasury/>
+      <Navbar />
+      <Treasury />
     </div>
-  )
-}
+  );
+};
 
-export default Treasurypage
+export default Treasurypage;

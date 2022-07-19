@@ -1,14 +1,14 @@
 import React from "react";
+import CreateNFT from "../components/CreateNFT.jsx";
 import { Navbar } from "../components/Navbar.jsx";
-import { Create } from "../components/Create.jsx";
 
-const Createpage = () => {
+const CreateNFTPage = () => {
   return (
     <div>
       <Navbar />
-      <Create />
+      <CreateNFT />
     </div>
   );
 };
 
-export default Createpage;
+export default CreateNFTPage;

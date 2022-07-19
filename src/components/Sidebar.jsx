@@ -1,8 +1,10 @@
 import React from "react";
 import { MdOutlineVerified } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import { useAccount } from "wagmi";
 
 export const Sidebar = () => {
+  const { address, isConnected } = useAccount();
   return (
     <div
       className="md:w-64 sm:w-full  py-4 px-3 m-5 rounded-xl border"
@@ -28,7 +30,7 @@ export const Sidebar = () => {
         Join
       </a>
 
-      <ul className="space-y-2">
+      <ul className="space-y-2 sidebar-nav-links">
         <li>
           <NavLink
             to="/"
@@ -65,15 +67,17 @@ export const Sidebar = () => {
             About
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/"
-            className="flex items-center ml-3 p-2 text-base font-normal  rounded-lg text-white hover:bg-gray-700"
-          >
-            {" "}
-            Create NFT
-          </NavLink>
-        </li>
+        {isConnected && (
+          <li>
+            <NavLink
+              to="/create-nft"
+              className="flex items-center ml-3 p-2 text-base font-normal  rounded-lg text-white hover:bg-gray-700"
+            >
+              {" "}
+              Create NFT
+            </NavLink>
+          </li>
+        )}
       </ul>
     </div>
   );
