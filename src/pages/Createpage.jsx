@@ -1,14 +1,14 @@
-import React from 'react';
-import {Navbar}  from "../components/Navbar.jsx";
-import {Create}  from "../components/Create.jsx";
+import React from "react";
+import { Navbar } from "../components/Navbar.jsx";
+import { Create } from "../components/Create.jsx";
 
 const Createpage = () => {
   return (
     <div>
-       <Navbar/>
-       <Create/>
+      <Navbar />
+      <Create />
     </div>
-  )
-}
+  );
+};
 
-export default Createpage
+export default Createpage;

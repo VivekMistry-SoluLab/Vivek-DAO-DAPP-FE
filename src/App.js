@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/Create" element={<Createpage />} />
         <Route path="/Treasury" element={<Treasurypage />} />
         <Route path="/About" element={<Aboutpage />} />
-        <Route path="/Details" element={<Detailspage />} />
+        <Route path="/Details/:id" element={<Detailspage />} />
         <Route path="/create-nft" element={<CreateNFTPage />} />
       </Routes>
     </div>

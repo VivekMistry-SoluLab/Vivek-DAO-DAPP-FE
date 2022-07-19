@@ -30,7 +30,7 @@ export const Sidebar = () => {
         Join
       </a>
 
-      <ul className="space-y-2">
+      <ul className="space-y-2 sidebar-nav-links">
         <li>
           <NavLink
             to="/"
