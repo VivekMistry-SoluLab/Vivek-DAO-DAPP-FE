@@ -5,7 +5,7 @@ const Card = (props) => {
   const { data } = props;
   return (
     <div>
-      <NavLink to={`/Details/${data.id}`}>
+      <NavLink to={`/${data.status === "Active" ? `Details/${data.id}` : ""}`}>
         <div
           className="block p-6 m-2 max-w-2xl rounded-lg border shadow-md hover:bg-gray-700"
           style={{ borderColor: "#2d2d2d" }}

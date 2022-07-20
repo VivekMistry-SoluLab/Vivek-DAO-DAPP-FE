@@ -14,7 +14,7 @@ const Sidetabs = () => {
           >
             information
           </li>
-          <li
+          {/* <li
             className="flex flex-row justify-between py-2 px-4 w-full border-b border-gray-600"
             style={{ borderColor: "#2d2d2d" }}
           >
@@ -26,7 +26,7 @@ const Sidetabs = () => {
                 alt=""
               />
             </div>
-          </li>
+          </li> */}
           <li
             className="flex flex-row justify-between py-2 px-4 w-full border-b border-gray-600"
             style={{ borderColor: "#2d2d2d" }}

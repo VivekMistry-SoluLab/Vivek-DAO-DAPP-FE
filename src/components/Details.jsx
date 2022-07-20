@@ -8,7 +8,7 @@ const Details = () => {
           <h1>Grants Commitee Election for S5 and S6</h1>
         </div>
         <div className="mt-5 flex flex-row">
-          <button class="bg-green-500 hover:bg-blue-700 text-white font-bold  px-1 rounded-full">
+          <button class="bg-green-500 hover:bg-blue-700 text-white font-bold  px-2 rounded-full">
             Active
           </button>
           <img
