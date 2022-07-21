@@ -4,15 +4,22 @@ import * as Yup from "yup";
 import { MESSAGE_REQUIRED, TITLE_REQUIRED } from "../constants/errorConstants";
 import { useAccount } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useNavigate } from "react-router-dom";
 
 export const Create = () => {
   const { address, isConnected } = useAccount();
   console.log(address, isConnected);
 
+  const navigate = useNavigate();
   const validationSchema = Yup.object({
     title: Yup.string().required(TITLE_REQUIRED),
     message: Yup.string().required(MESSAGE_REQUIRED),
   });
+
+  const handleSubmit = (values) => {
+    console.log(values);
+    navigate("/create-vote");
+  };
 
   return (
     <>
@@ -32,9 +39,7 @@ export const Create = () => {
             discussion: "",
           }}
           validationSchema={validationSchema}
-          onSubmit={(values) => {
-            console.log(values);
-          }}
+          onSubmit={(values) => handleSubmit(values)}
         >
           {({ values, errors, touched, handleChange, handleSubmit }) => (
             <form onSubmit={handleSubmit}>
@@ -51,7 +56,7 @@ export const Create = () => {
                 onChange={handleChange}
                 value={values.title}
                 aria-describedby="helper-text-explanation"
-                className=" border mx-auto max-w-2xl border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-gray-600 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500 color:black"
+                className="bg-transparent border mx-auto max-w-2xl border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-gray-600 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500 text-white"
                 placeholder="Any Title"
               />
               <div className="block mt-2 mx-auto max-w-2xl text-sm font-normal text-red-500">
@@ -69,7 +74,7 @@ export const Create = () => {
                 name="message"
                 value={values.message}
                 onChange={handleChange}
-                className="block p-2.5 w-full mx-auto max-w-2xl text-sm rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500 text-black"
+                className="bg-transparent block p-2.5 w-full mx-auto max-w-2xl text-sm rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Leave a comment..."
               />
               <div className="block mt-2 mx-auto max-w-2xl text-sm font-normal text-red-500">
@@ -88,7 +93,7 @@ export const Create = () => {
                 value={values.discussion}
                 onChange={handleChange}
                 aria-describedby="helper-text-explanation"
-                className=" border mx-auto max-w-2xl border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-gray-600 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500 color:black"
+                className="bg-transparent border mx-auto max-w-2xl border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  border-gray-600 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500 text-white"
                 placeholder="https://forum.balancer.fi/proposal"
               />
               {isConnected && (
@@ -97,7 +102,7 @@ export const Create = () => {
                     type="submit"
                     className="mt-5 px-4 py-2 rounded-lg border shadow-md hover:bg-gray-100 text-white hover:text-black"
                   >
-                    Create Proposal
+                    Next
                   </button>
                 </div>
               )}

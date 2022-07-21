@@ -12,6 +12,7 @@ import { Route, Routes } from "react-router-dom";
 
 import "./assets/styles/index.css";
 import CreateNFTPage from "./pages/CreateNFTPage";
+import CreateVotePage from "./pages/CreateVotePage";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/About" element={<Aboutpage />} />
         <Route path="/Details/:id" element={<Detailspage />} />
         <Route path="/create-nft" element={<CreateNFTPage />} />
+        <Route path="/create-vote" element={<CreateVotePage />} />
       </Routes>
     </div>
   );
