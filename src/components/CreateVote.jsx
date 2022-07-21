@@ -17,6 +17,10 @@ const CreateVote = () => {
     choice1: Yup.string().required(CHOICE1_REQUIRED),
     choice2: Yup.string().required(CHOICE2_REQUIRED),
   });
+
+  const handleSubmit = (data) => {
+    console.log(data);
+  };
   return (
     <div>
       <>
@@ -26,13 +30,11 @@ const CreateVote = () => {
               choice1: "",
               choice2: "",
               choice3: "",
-              startDate: startDate,
-              endDate: endDate,
             }}
             validationSchema={validationSchema}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
+            onSubmit={(values) =>
+              handleSubmit({ ...values, startDate, endDate })
+            }
           >
             {({ values, errors, touched, handleChange, handleSubmit }) => (
               <form onSubmit={handleSubmit}>
