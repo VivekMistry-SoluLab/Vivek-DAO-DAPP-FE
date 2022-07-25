@@ -2,7 +2,7 @@ import React from "react";
 
 const Heading = () => {
   return (
-    <div>
+    <div className="px-1">
       <div className="mx-auto mt-5 font-bold max-w-2xl text-3xl text-gray-50">
         <h1>Proposals</h1>
       </div>

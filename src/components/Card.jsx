@@ -30,7 +30,7 @@ const Card = (props) => {
             <button
               className={`${
                 data.status === "Active" ? "bg-green-500" : "bg-violet-600"
-              } text-white font-bold  px-3 rounded-full`}
+              } text-white font-bold  px-3 rounded-full h-fit`}
             >
               {data.status}
             </button>

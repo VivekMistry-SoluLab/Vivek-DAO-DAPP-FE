@@ -24,7 +24,7 @@ const CreateVote = () => {
   return (
     <div>
       <>
-        <div>
+        <div className="px-5">
           <Formik
             initialValues={{
               choice1: "",

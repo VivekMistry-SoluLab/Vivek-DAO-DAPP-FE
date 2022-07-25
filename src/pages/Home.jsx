@@ -77,7 +77,7 @@ const Home = () => {
           <Sidebar />
         </div>
         <div
-          className="flex flex-col overflow-y-auto"
+          className="flex flex-col overflow-y-auto px-5"
           style={{ maxHeight: "92vh" }}
         >
           <Heading />
