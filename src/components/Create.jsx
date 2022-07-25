@@ -24,14 +24,14 @@ export const Create = () => {
   return (
     <>
       <div
-        className="mx-auto mt-5 block p-6 m-2 max-w-2xl rounded-lg border shadow-md hover:bg-gray-100"
+        className="mx-auto mt-5 block p-6 m-2 max-w-2xl rounded-lg border shadow-md hover:bg-gray-100 mx-5"
         style={{ borderColor: "#2d2d2d" }}
       >
         <p className="font-normal text-gray-400">
           You need to be an author of the space in order to submit a proposal.
         </p>
       </div>
-      <div>
+      <div className="px-5">
         <Formik
           initialValues={{
             title: "",

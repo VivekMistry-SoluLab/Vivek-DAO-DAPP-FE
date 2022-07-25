@@ -15,7 +15,7 @@ const CreateNFT = () => {
 
   return (
     <>
-      <div className="mx-auto block max-w-2xl ">
+      <div className="mx-auto block max-w-2xl px-5">
         <div
           className=" mt-5 p-6 mb-10 rounded-lg border shadow-md hover:bg-gray-100"
           style={{ borderColor: "#2d2d2d" }}
