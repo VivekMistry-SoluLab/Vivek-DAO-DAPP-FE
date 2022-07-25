@@ -14,3 +14,7 @@
   z-index: -1;
   /* outline: 1px solid slategrey; */
 }
+
+.sidebar-nav-links a.active {
+  border-bottom: 1px solid #ffffff;
+}
